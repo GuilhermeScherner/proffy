@@ -19,21 +19,25 @@ function Login(){
         <p className="text-login">Fazer login</p>   
         <form>
           <div className="input-login">
-            <input type="text" placeholder="Email"/>
+            <input type="text" placeholder="E-mail"/>
             <input type="text" placeholder="Senha"/>
           </div>
-          <div>
-            <input type="checkbox" name="" id=""/>
-            <p>Lembrar-me</p>
+          <div className="forget-login">
+            <div className="remind-login">
+              <input type="checkbox" name="" id=""/>
+              <p>Lembrar-me</p>
+            </div>
             <a href="/">Esqueci minha senha</a>
           </div>
           <button type="submit">Entrar</button>
           <div className="footer-login">
-            <p>Não tem conta?</p>
+            <div>
+              <p>Não tem conta?</p>
+              <a href="/">Cadastre-se</a>
+            </div>
             <p>É de graça 
               <img src={heartIcon} alt="" />
             </p>
-            <a href="/">Cadastre-se</a>
           </div>
         </form>
       </div>
