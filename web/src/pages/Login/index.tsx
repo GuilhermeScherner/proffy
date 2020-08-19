@@ -5,6 +5,7 @@ import imageBk from '../../assets/images/success-background.svg'
 import heartIcon from '../../assets/images/icons/purple-heart.svg'
 import logoImg from '../../assets/images/logo.svg'
 
+
 function Login(){
   return (
     <div id="page-login">
@@ -12,20 +13,31 @@ function Login(){
         <img src={imageBk} alt=""/>
         <div className="header-logo">
           <img src={logoImg} alt=""/>
-          <p>Sua plataforma de estudos</p>
+          <p>Sua plataforma de estudos online.</p>
         </div>
       </div>
       <div className="form-login">
         <p className="text-login">Fazer login</p>   
         <form>
           <div className="input-login">
-            <input type="text" placeholder="E-mail"/>
-            <input type="text" placeholder="Senha"/>
+            <div className="input-email">
+              <div>
+              <input type="text" />
+              <span>E-mail</span>
+              </div>
+            </div>
+            <div className="input-password">
+              <div>
+                <input type="password"/>
+                <span>Senha</span>
+              </div>
+            </div>
           </div>
+          </form>
           <div className="forget-login">
             <div className="remind-login">
-              <input type="checkbox" name="" id=""/>
-              <p>Lembrar-me</p>
+              <input type="checkbox" id="check" name="cb" />
+              <label htmlFor="check">Lembrar-me</label>
             </div>
             <a href="/">Esqueci minha senha</a>
           </div>
@@ -39,7 +51,7 @@ function Login(){
               <img src={heartIcon} alt="" />
             </p>
           </div>
-        </form>
+        
       </div>
     </div>
   );

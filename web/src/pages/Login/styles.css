@@ -41,8 +41,9 @@
   margin-bottom: 10px;
   margin-top: 0px;
   color: var(--color-text-title);
-  font: 700 2.2rem Archivo;
+  font: 700 2.2rem Poppins;
 }
+
 .input-login{
   display: flex;
   flex-direction: column;
@@ -56,17 +57,94 @@
   border: none;
   border-radius: 5px;
   padding: 20px;
-  
+  font: 700 1.3rem Poppins;
+  color: var(--color-text-complement);
+  background-color: var(--color-input-background);
+}
+.input-email{
+  position: relative;
+}
+
+.input-email span,
+.input-password span{
+  position:absolute;
+  top: 21px;
+  left: 20px;
+  font: 700 1.3rem Poppins;
+  color: var(--color-text-complement);
+}
+
+.input-email span,
+.input-password span {
+  transition:top .5s ease;
+}
+.input-email input:focus ~ span,
+.input-password input:focus ~ span
+{
+  top:0px;
+ }
+
+
+.input-password span{
+  position:absolute;
+  top: 21px;
+  left: 20px;
+  font: 700 1.3rem Poppins;
+  color: var(--color-text-complement);
+}
+.input-email:focus-within::after{
+  height: calc(100% - 2rem);
+  width: 2px;
+  position: absolute;
+  background: var(--color-primary-light);
+  content: "";
+  left: 0.1rem;
+  top: 1rem;
+}
+
+.input-password{
+  position: relative;
+}
+
+.input-password:focus-within::after{
+  height: calc(100% - 2rem);
+  width: 2px;
+  position: absolute;
+  background: var(--color-primary-light);
+  content: "";
+  left: 0.1rem;
+  top: 1rem;
+}
+
+.forget-login{
+  margin-top: 10px;
 }
 
 .forget-login .remind-login{
   display: flex;
   align-items:center;
+  justify-content: center;
   
 }
 
-.forget-login .remind-login p{
+.forget-login .remind-login label{
+  margin: 5px;
+  font: 400 1.2rem Poppins;
+  color: var(--color-text-complement);
+}
+
+
+
+.forget-login a{
   margin: 10px;
+  font: 400 1.2rem Poppins;
+  color: var(--color-text-complement);
+  text-decoration: none;
+  padding: 2px;
+}
+
+.forget-login a:hover{
+  text-decoration: underline;
 }
 
 .forget-login{
@@ -78,13 +156,108 @@
 .form-login button{
   width: 350px;
   height: 50px;
-  background-color: #9C98A6;
+  background-color: #DCDCD5;
   border: none;
   border-radius: 5px;
   margin: 2rem 0rem;
+  cursor: pointer;
+  outline: none;
+}
+
+.form-login button:hover{
+  background-color: var(--color-secundary);
+  color: var(--color-button-text);
+}
+
+.form-login button:active{
+  background-color: var(--color-secundary-dark);
+  border:none;
 }
 
 .footer-login{
   display: flex;
   justify-content: space-between;
+}
+
+.footer-login p{
+  color: var(--color-text-base);
+  font: 400 1.3rem Poppins;
+}
+.footer-login a{
+  color: var(-color-primary);
+  font: 700 1.3rem Poppins;
+  
+}
+
+.footer-login > p {
+  color: var(--color-text-complement);
+}
+
+.footer-login > p > img{
+  margin-left: 5px;
+}
+
+
+input[type="checkbox"] {
+  visibility: hidden;
+}
+label {
+  cursor: pointer;
+}
+input[type="checkbox"] + label:before {
+  border: 1px solid var(--color-secundary);
+  border-radius: 5px;
+  content: "";
+  display: inline-block;
+  font: 16px/1em sans-serif;
+  height: 16px;
+  margin: 0rem 1rem 0 -1.5rem;
+  vertical-align: top;
+  width: 16px;
+}
+input[type="checkbox"]:checked + label:before {
+  background: var(--color-secundary);
+  color: var(--color-button-text);
+  content: "\2713";
+  text-align: center;
+}
+
+
+
+@media(min-width: 1100px){
+
+  #page-login{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #page-login .header{
+    height: 100vh;
+    width: 50vw;
+    margin: 0;
+    margin-right: 10rem;
+  }
+
+  .header img{
+    width: 60rem;
+  }
+  .header-logo > p{
+   width: 20rem;
+   margin-left: 16rem;
+   font: 700 2.3rem Archivo;
+
+  }
+
+  .text-login{
+    margin-bottom: 20px;
+    margin-top: 0px;
+    color: var(--color-text-title);
+    font: 700 3.0rem Poppins;
+  }
+
+  .footer-login{
+    margin-top: 10rem;
+  }
+
+  
 }
