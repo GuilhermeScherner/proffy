@@ -1,0 +1,22 @@
+#page-login {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: var(--color-text-in-primary); 
+}
+
+
+.form-login{
+  width: 350px;
+}
+
+
+@media(min-width: 1100px){
+
+  #page-login{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
