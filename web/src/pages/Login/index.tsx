@@ -1,19 +1,18 @@
 import React from 'react';
-import './styles.css';
-
 
 import heartIcon from '../../assets/images/icons/purple-heart.svg'
 import InputSign from '../../components/InputSign';
 import StructSign from '../../components/StructSign';
 
+import './styles.css';
 
 function Login() {
   return (
-    <StructSign>
+    <StructSign fst="right" snd="left">
       <p className="text-login">Fazer login</p>
       <form>
         <div className="input-login">
-          <InputSign type="text" spanText="E-mail"></InputSign>
+          <InputSign type="email" spanText="E-mail"></InputSign>
           <InputSign type="password" spanText="Senha"></InputSign>
         </div>
       </form>

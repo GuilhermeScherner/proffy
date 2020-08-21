@@ -17,6 +17,21 @@
 
   #page-login{
     display: grid;
+    grid-template-areas: "left right";
     grid-template-columns: 1fr 1fr;
+    grid-gap: 5rem;
+  }
+  .left{
+    grid-area: left;
+    align-items: center;
+
+  }
+  .right{
+    grid-area: right;
+    align-items: center;
+
+  }
+  .form-login{
+    margin-left: 10rem;
   }
 }
