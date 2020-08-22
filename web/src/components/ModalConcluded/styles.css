@@ -1,0 +1,33 @@
+.modal-conclueded{
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 1000;
+  overflow: hidden;
+  background-color: var(--color-primary);
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.modal-conclueded .container{
+  max-width: 400px;
+  margin: auto;
+}
+
+.container h1{
+  font: 700 3.6rem Archivo;
+  color: var(--color-title-in-primary);
+}
+
+.container p{
+  font: 400 1.3rem Poppins;
+  color: var(--color-title-in-primary);
+}
+
+.container button {
+  width: 50%;
+}
