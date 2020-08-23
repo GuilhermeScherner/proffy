@@ -1,6 +1,5 @@
 import React from 'react';
 import HeaderSign from '../HeaderSign';
-
 import './styles.css';
 interface StructSignProps {
   fst: string
@@ -10,6 +9,7 @@ interface StructSignProps {
 const StructSign: React.FC<StructSignProps> = (props) => {
   return (
     <div id="page-login">
+      
       <div className={`${props.fst}`}>
         <HeaderSign></HeaderSign>
       </div>

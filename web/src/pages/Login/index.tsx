@@ -4,7 +4,9 @@ import heartIcon from '../../assets/images/icons/purple-heart.svg'
 import InputSign from '../../components/InputSign';
 import StructSign from '../../components/StructSign';
 
+
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 function Login() {
   return (
@@ -21,13 +23,13 @@ function Login() {
           <input type="checkbox" id="check" name="cb" />
           <label htmlFor="check">Lembrar-me</label>
         </div>
-        <a href="/">Esqueci minha senha</a>
+        <Link to="/password_reset"><a href="/">Esqueci minha senha</a></Link>
       </div>
       <button type="submit">Entrar</button>
       <div className="footer-login">
         <div>
           <p>Não tem conta?</p>
-          <a href="/">Cadastre-se</a>
+          <Link to="/Signup"><a href="/">Cadastre-se</a></Link>
         </div>
         <p>É de graça
               <img src={heartIcon} alt="" />

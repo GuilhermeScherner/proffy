@@ -1,6 +1,4 @@
 .text-login{
-  margin-bottom: 10px;
-  margin-top: 0px;
   color: var(--color-text-title);
   font: 700 2.2rem Poppins;
 }
@@ -127,7 +125,7 @@ input[type="checkbox"]:checked + label:before {
   }
 
   .footer-login{
-    margin-top: 6rem;
+    margin-top: 3rem;
   }
 
   

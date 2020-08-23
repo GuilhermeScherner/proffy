@@ -11,7 +11,9 @@ import ForgotPage from './pages/ForgotPage'
 function Routes(){
   return(
     <BrowserRouter>
-    <Route path="/" exact component={ForgotPage}/>
+    <Route path="/" exact component={Login}/>
+    <Route path="/Signup" component={SignUp}/>
+    <Route path="/password_reset" component={ForgotPage}/>
     <Route path="/study" component={TeacherList}/>
     <Route path="/give-classes" component={TeacherForm}/>
   
