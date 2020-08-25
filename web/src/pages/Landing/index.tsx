@@ -29,15 +29,16 @@ function Landing() {
     <div id="page-landing">
      <div id="page-landing-content" className="container">
         <div className="icon-profile">
-          <img src={iconAvatar} alt=""/>
-          <p>{nameUser}</p>
+          <Link to="/profile"><img src={iconAvatar} alt=""/></Link>
+          <Link to="/profile" style={{ textDecoration: 'none' }}><p>{nameUser}</p></Link>
         </div>
         <div className="logo-container">
           <img src={logoImg} alt="Proffy"/>
           <h2>Sua plataforma de estudos online.</h2>
         </div>
-
-        <img src={landingImg} alt="Plataforma de estudos" className="hero-image"/>
+        <div className="container-hero-image">
+          <img src={landingImg} alt="Plataforma de estudos" className="hero-image"/>
+        </div>
 
         <div className="buttons-container">
           <Link to="/study" className="study">

@@ -16,10 +16,13 @@
   display: flex;
 }
 
+
+
 #page-landing .icon-profile img{
-  width: 5rem;
-  height: 5rem;
-  margin-bottom: 5rem;
+  width: 4rem;
+  height: 6rem;
+  margin-bottom: 0rem;
+  
 }
 
 #page-landing .icon-profile p{
@@ -31,7 +34,12 @@
 }
 
 .hero-image{
-  width: 100%;
+  width: 49.5rem;
+}
+.container-hero-image{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .logo-container{
@@ -118,10 +126,13 @@
     grid-template-columns: 2fr 1fr 1fr;
 
     grid-template-areas: 
-    "icone aa aa"
+    "icone - -"
     "logo hero hero"
     "buttons buttons total";
 
+  }
+  .hero-image{
+    width: 100%;
   }
   .logo-container{
     grid-area: logo;
@@ -134,6 +145,11 @@
     grid-area: icone;
     margin-top: -5rem;
   }
+  .container-hero-image{
+    display: inline;
+    grid-area: hero;
+    justify-self: end;
+  }
 
 
   .logo-container h2{
@@ -145,11 +161,7 @@
     height: 100%;
   }
 
-  .hero-image{
-    grid-area: hero;
-    justify-self: end;
-    
-  }
+
 
   .buttons-container{
     grid-area: buttons;
