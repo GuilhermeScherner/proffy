@@ -25,7 +25,7 @@ function Login() {
         </div>
         <Link to="/password_reset"><a href="/">Esqueci minha senha</a></Link>
       </div>
-      <button type="submit">Entrar</button>
+      <Link to="/landing"><button type="submit">Entrar</button></Link>
       <div className="footer-login">
         <div>
           <p>Não tem conta?</p>

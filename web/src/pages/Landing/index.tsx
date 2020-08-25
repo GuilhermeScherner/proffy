@@ -14,17 +14,24 @@ import './styles.css';
 
 function Landing() {
   const [totalConnections, setTotalConnections] = useState(0)
-
+  const [iconAvatar, setIconAvatar] = useState("https://image.flaticon.com/icons/svg/149/149452.svg") 
+  const [nameUser, setNameUser] = useState("Usuário")
   useEffect(() => {
     api.get('connections').then(response => {
-      const {total} = response.data
+      const {total, avatar, name} = response.data
       setTotalConnections(total)
+      setIconAvatar(avatar)
+      setNameUser(name)
     })
   }, [])
 
   return (
     <div id="page-landing">
-      <div id="page-landing-content" className="container">
+     <div id="page-landing-content" className="container">
+        <div className="icon-profile">
+          <img src={iconAvatar} alt=""/>
+          <p>{nameUser}</p>
+        </div>
         <div className="logo-container">
           <img src={logoImg} alt="Proffy"/>
           <h2>Sua plataforma de estudos online.</h2>

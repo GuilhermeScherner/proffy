@@ -12,6 +12,20 @@
 
 }
 
+#page-landing .icon-profile{
+  display: flex;
+}
+
+#page-landing .icon-profile img{
+  width: 5rem;
+  height: 5rem;
+  margin-bottom: 5rem;
+}
+
+#page-landing .icon-profile p{
+  font: 500 2.0rem Poppins;
+}
+
 .logo-container img{
   height: 8rem;
 }
@@ -100,10 +114,11 @@
     max-width: 1360px;
     
     display: grid;
-    grid-template-rows: 350px 1fr;
+    grid-template-rows: 50px 350px 1fr;
     grid-template-columns: 2fr 1fr 1fr;
 
     grid-template-areas: 
+    "icone aa aa"
     "logo hero hero"
     "buttons buttons total";
 
@@ -115,6 +130,11 @@
     margin: 0;
     
   }
+  .icon-profile{
+    grid-area: icone;
+    margin-top: -5rem;
+  }
+
 
   .logo-container h2{
     text-align: initial;
