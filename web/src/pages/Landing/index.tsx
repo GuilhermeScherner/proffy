@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import logoImg from '../../assets/images/logo.svg'
 import landingImg from '../../assets/images/landing.svg'
@@ -14,11 +14,11 @@ import './styles.css';
 
 function Landing() {
   const [totalConnections, setTotalConnections] = useState(0)
-  const [iconAvatar, setIconAvatar] = useState("https://image.flaticon.com/icons/svg/149/149452.svg") 
+  const [iconAvatar, setIconAvatar] = useState("https://image.flaticon.com/icons/svg/149/149452.svg")
   const [nameUser, setNameUser] = useState("Usuário")
   useEffect(() => {
     api.get('connections').then(response => {
-      const {total, avatar, name} = response.data
+      const { total, avatar, name } = response.data
       setTotalConnections(total)
       setIconAvatar(avatar)
       setNameUser(name)
@@ -27,34 +27,40 @@ function Landing() {
 
   return (
     <div id="page-landing">
-     <div id="page-landing-content" className="container">
+      <div id="page-landing-content" className="container">
         <div className="icon-profile">
-          <Link to="/profile"><img src={iconAvatar} alt=""/></Link>
+          <Link to="/profile"><img src={iconAvatar} alt="" /></Link>
           <Link to="/profile" style={{ textDecoration: 'none' }}><p>{nameUser}</p></Link>
         </div>
         <div className="logo-container">
-          <img src={logoImg} alt="Proffy"/>
+          <img src={logoImg} alt="Proffy" />
           <h2>Sua plataforma de estudos online.</h2>
         </div>
         <div className="container-hero-image">
-          <img src={landingImg} alt="Plataforma de estudos" className="hero-image"/>
+          <img src={landingImg} alt="Plataforma de estudos" className="hero-image" />
         </div>
 
+      </div>
+      <div id="footer-page">
+        <div className="text-welcome">
+        <span>Seja bem-vindo.</span>
+        <span>O que deseja fazer?</span>
+        </div>
         <div className="buttons-container">
           <Link to="/study" className="study">
-            <img src={studyIcon} alt="Estudar"/>
+            <img src={studyIcon} alt="Estudar" />
             Estudar
           </Link>
 
           <Link to="/give-classes" className="give-classes">
-            <img src={giveClassesIcon} alt="Dar Aulas"/>
+            <img src={giveClassesIcon} alt="Dar Aulas" />
             Dar Aulas
           </Link>
         </div>
 
         <span className="total-connections">
-          Total de {totalConnections} conexões já realizadas 
-          <img src={purpleHeartIcon} alt="Coração roxo"/>
+         <p> Total de {totalConnections} conexões já realizadas
+          <img src={purpleHeartIcon} alt="Coração roxo" /></p>
         </span>
       </div>
     </div>
