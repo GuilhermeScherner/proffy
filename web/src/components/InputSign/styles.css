@@ -28,6 +28,11 @@ input{
 {
   top:0px;
  }
+
+ .input-field input:not([value=""]) ~ span
+{
+  top:0px;
+ }
 .input-field:focus-within::after{
   height: calc(100% - 2rem);
   width: 2px;

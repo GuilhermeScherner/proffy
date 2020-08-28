@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes } from 'react';
+import React, { InputHTMLAttributes, useState } from 'react';
 
 import './styles.css';
 interface InputSignProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -8,10 +8,11 @@ interface InputSignProps extends InputHTMLAttributes<HTMLInputElement> {
 
 
 const InputSign: React.FC<InputSignProps> = ({type, spanText}) => {
+  const [email, setEmail] = useState("")
   return (
     <div className={`input-field`}>
       <div>
-        <input type={type} />
+        <input type={type} value={email} onChange={e => setEmail(e.target.value)} />
         <span>{spanText}</span>
       </div>
     </div>
