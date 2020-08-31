@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 import './styles.css';
 import PageHeader from '../../components/PageHeader';
@@ -6,7 +6,9 @@ import Input from '../../components/input';
 import Select from '../../components/Select';
 import Textarea from '../../components/TextArea';
 
-function Profile(){
+import warningItem from '../../assets/images/icons/warning.svg'
+
+function Profile() {
   const [name, setName] = useState('')
   const [whatsapp, setWhatsapp] = useState('')
   const [bio, setBio] = useState('')
@@ -19,7 +21,7 @@ function Profile(){
     { week_day: 0, from: '', to: '' },
   ])
 
-  return(
+  return (
     <div id="page-profile">
       <PageHeader title="Guilherme" description="Geografia"></PageHeader>
       <main>
@@ -27,18 +29,23 @@ function Profile(){
           <fieldset>
             <legend>Seus dados</legend>
 
-            <Input name="name" label="Nome"
-              value={name} onChange={e => { setName(e.target.value) }}></Input>
+            <div className="duple-field">
+              <Input name="name" label="Nome"
+                value={name} onChange={e => { setName(e.target.value) }}></Input>
+                
+              <Input name="surname" label="Sobrenome"
+                value={name} onChange={e => { setName(e.target.value) }}></Input>
+            </div>
 
-            <Input name="surname" label="Sobrenome"
-            value={name} onChange={e => { setName(e.target.value) }}></Input>
-
+            <div className="duple-field lendif">
+              
             <Input name="email" label="E-mail"
-            value={email} onChange={e => { setEmail(e.target.value) }}>
+              value={email} onChange={e => { setEmail(e.target.value) }}>
             </Input>
 
             <Input name="whatsapp" label="Whatsapp"
               value={whatsapp} onChange={e => { setWhatsapp(e.target.value) }}></Input>
+            </div>
 
             <Textarea name="bio" label="Biografia"
               value={bio} onChange={e => { setBio(e.target.value) }}></Textarea>
@@ -73,7 +80,7 @@ function Profile(){
 
           <fieldset>
             <legend>Horários disponíveis
-          <button type="button" onClick={()=>console.log()}>+ Novo horário</button>
+          <button type="button" onClick={() => console.log()}>+ Novo horário</button>
             </legend>
             {scheduleItems.map((scheduleItem, index) =>
               <div key={scheduleItem.week_day} className="schedule-item">
@@ -81,7 +88,7 @@ function Profile(){
                   name="week_day"
                   label="Dia da semana"
                   value={scheduleItem.week_day}
-                  
+
                   options={[
                     { value: '0', label: 'Domingo' },
                     { value: '1', label: 'Segunda-feira' },
@@ -92,12 +99,12 @@ function Profile(){
                     { value: '6', label: 'Sábado' }
                   ]}
                 ></Select>
-                
-                <Input name="from" label="Das" type="time"value={scheduleItem.from}
+
+                <Input name="from" label="Das" type="time" value={scheduleItem.from}
                 ></Input>
-                
+
                 <Input name="to" label="Até" type="time" value={scheduleItem.to}
-               ></Input>
+                ></Input>
               </div>)}
 
           </fieldset>
@@ -105,7 +112,7 @@ function Profile(){
 
           <footer>
             <p>
-              <img  alt="Aviso importante" />
+              <img src={warningItem} alt="Aviso importante" />
           Importante<br />
           Preencha todos os dados
         </p>
