@@ -32,6 +32,26 @@ function Profile() {
     ]);
   }
 
+  function setScheduleItemValue(
+    position: number,
+    field: string,
+    value: string
+  ) {
+    const updateScheduleItems = scheduleItems.map((scheduleItem, index) => {
+      if (index === position) {
+        return { ...scheduleItem, [field]: value };
+      }
+      return scheduleItem;
+    });
+    setScheduleItems(updateScheduleItems);
+  }
+
+  function removeScheduleItem(position: number) {
+    setScheduleItems([
+      ...scheduleItems.filter((item, index) => index !== position),
+    ]);
+  }
+
   return (
     <div id="page-profile">
       <PageHeader title="Guilherme" description="Geografia"></PageHeader>
@@ -131,6 +151,9 @@ function Profile() {
                   name="week_day"
                   label="Dia da semana"
                   value={scheduleItem.week_day}
+                  onChange={(e) =>
+                    setScheduleItemValue(index, "week_day", e.target.value)
+                  }
                   options={[
                     { value: "0", label: "Domingo" },
                     { value: "1", label: "Segunda-feira" },
@@ -147,6 +170,9 @@ function Profile() {
                   label="Das"
                   type="time"
                   value={scheduleItem.from}
+                  onChange={(e) =>
+                    setScheduleItemValue(index, "from", e.target.value)
+                  }
                 ></Input>
 
                 <Input
@@ -154,11 +180,17 @@ function Profile() {
                   label="Até"
                   type="time"
                   value={scheduleItem.to}
+                  onChange={(e) =>
+                    setScheduleItemValue(index, "to", e.target.value)
+                  }
                 ></Input>
                 <div className="delete-item">
                   <div className="delete-item-button">
                     <hr />
-                    <button type="button" onClick={() => console.log()}>
+                    <button
+                      type="button"
+                      onClick={() => removeScheduleItem(index)}
+                    >
                       Excluir horário
                     </button>
                     <hr />
