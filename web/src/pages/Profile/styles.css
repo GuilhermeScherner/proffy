@@ -78,7 +78,7 @@
   color: red;
   border: none;
   background: none;
-  font: 700 1.6rem Archivo;
+  font: 700 1.5rem Archivo;
 }
 
 #page-profile main fieldset .input-block + .textarea-block,
@@ -126,6 +126,12 @@
 #page-profile main footer button:hover {
   background: var(--color-secundary-dark);
 }
+#page-profile .delete-item {
+  margin-bottom: 2.1rem;
+}
+#page-profile .delete-item .delete-item-button {
+  width: 100%;
+}
 
 @media (max-width: 600px) {
   #page-profile .schedule-item {
@@ -150,25 +156,21 @@
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
-    grid-template-areas:
-      "week from to"
-      "delete delete delete";
+
     column-gap: 1.6rem;
     margin-bottom: 1.6rem;
   }
-  #page-profile .select-block {
-    grid-area: week;
+
+  #page-profile .delete-item {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    margin-bottom: 1rem;
   }
-  #page-profile .schedule-item div:nth-child(2) {
-    grid-area: from;
-  }
-  #page-profile .input-block div:nth-child(3) {
-    grid-area: to;
-  }
-  #page-profile .input-block div:nth-child(4) {
-    grid-area: delete;
+
+  #page-profile .delete-item .delete-item-button {
     width: 100%;
   }
+
   #page-profile main .schedule-item .input-block {
     margin-top: 0 !important;
   }

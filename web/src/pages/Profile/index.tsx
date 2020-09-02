@@ -159,7 +159,7 @@ function Profile() {
                   <div className="delete-item-button">
                     <hr />
                     <button type="button" onClick={() => console.log()}>
-                      Excluir horario
+                      Excluir horário
                     </button>
                     <hr />
                   </div>
