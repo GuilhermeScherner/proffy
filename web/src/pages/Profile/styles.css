@@ -1,14 +1,14 @@
-#page-profile{
+#page-profile {
   width: 100vw;
   height: 100vh;
   overflow-x: hidden;
 }
 
-#page-profile .page-header .header-content{
+#page-profile .page-header .header-content {
   margin-top: 6.4rem;
 }
 
-#page-profile main{
+#page-profile main {
   background: var(--color-box-base);
   width: 100%;
   max-width: 74rem;
@@ -16,23 +16,22 @@
   margin: -3.2rem auto 3.2rem;
   padding-top: 6.4rem;
   overflow: hidden;
-  
 }
 
-#page-profile main label{
+#page-profile main label {
   color: var(--color-text-complement);
 }
 
-#page-profile main fieldset{
+#page-profile main fieldset {
   border: 0;
   padding: 0 2.4rem;
 }
 
-#page-profile main fieldset + fieldset{
+#page-profile main fieldset + fieldset {
   margin-top: 6.4rem;
 }
 
-#page-profile main fieldset legend{
+#page-profile main fieldset legend {
   font: 700 2.4rem Archivo;
   color: var(--color-text-title);
   margin-bottom: 2.4rem;
@@ -44,7 +43,7 @@
   border-bottom: 1px solid var(--color-line-in-white);
 }
 
-#page-profile main fieldset legend button{
+#page-profile main fieldset legend button {
   background: none;
   border: 0;
   color: var(--color-primary);
@@ -53,24 +52,48 @@
   transition: color 0.2s;
 }
 
-#page-profile main fieldset legend button:hover{
+#page-profile main fieldset legend button:hover {
   color: var(--color-primary-dark);
 }
+#page-profile main fieldset .delete-item {
+  position: relative;
+}
 
+#page-profile main fieldset .delete-item .delete-item-button {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#page-profile main fieldset .delete-item hr:first-child {
+  height: 1px;
+  width: 100%;
+}
+#page-profile main fieldset .delete-item hr:last-child {
+  height: 1px;
+  width: 100%;
+}
+#page-profile main fieldset .delete-item button {
+  color: red;
+  border: none;
+  background: none;
+  font: 700 1.6rem Archivo;
+}
 
 #page-profile main fieldset .input-block + .textarea-block,
-#page-profile main fieldset .select-block + .input-block{
+#page-profile main fieldset .select-block + .input-block {
   margin-top: 2.4rem;
 }
 
-#page-profile main footer{
+#page-profile main footer {
   padding: 4rem 2.4rem;
   background: var(--color-box-footer);
   border-top: 1px solid var(--color-line-in-white);
   margin-top: 6.4rem;
 }
 
-#page-profile main footer p{
+#page-profile main footer p {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -79,12 +102,11 @@
   color: var(--color-text-complement);
 }
 
-
-#page-profile main footer p img{
+#page-profile main footer p img {
   margin-right: 2rem;
 }
 
-#page-profile main footer button{
+#page-profile main footer button {
   width: 100%;
   height: 5.6rem;
   background: var(--color-secundary);
@@ -101,63 +123,78 @@
   margin-top: 3.2rem;
 }
 
-#page-profile main footer button:hover{
+#page-profile main footer button:hover {
   background: var(--color-secundary-dark);
 }
 
-@media(max-width: 600px){
-  #page-profile .schedule-item{
+@media (max-width: 600px) {
+  #page-profile .schedule-item {
     width: 90vw !important;
   }
 }
 
-@media(min-width: 700px){
-  #page-profile{
+@media (min-width: 700px) {
+  #page-profile {
     max-width: 100vw;
     overflow-x: hidden;
   }
 
-  #page-profile .page-header .header-content{
+  #page-profile .page-header .header-content {
     margin-bottom: 0;
   }
-  #page-profile main fieldset{
+  #page-profile main fieldset {
     padding: 0 6.4rem;
   }
 
-  
-  #page-profile main .schedule-item{
+  #page-profile main .schedule-item {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      "week from to"
+      "delete delete delete";
     column-gap: 1.6rem;
+    margin-bottom: 1.6rem;
   }
-  
-  #page-profile main .schedule-item .input-block{
+  #page-profile .select-block {
+    grid-area: week;
+  }
+  #page-profile .schedule-item div:nth-child(2) {
+    grid-area: from;
+  }
+  #page-profile .input-block div:nth-child(3) {
+    grid-area: to;
+  }
+  #page-profile .input-block div:nth-child(4) {
+    grid-area: delete;
+    width: 100%;
+  }
+  #page-profile main .schedule-item .input-block {
     margin-top: 0 !important;
   }
-  #page-profile main footer{
-    padding: 4.0rem 6.4rem;
+  #page-profile main footer {
+    padding: 4rem 6.4rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
-  
-  #page-profile main footer p{
+
+  #page-profile main footer p {
     justify-content: center;
   }
-  
-  #page-profile main footer button{
+
+  #page-profile main footer button {
     width: 20rem;
     margin-top: 0;
   }
-
 }
 
-@media(min-width: 1100px){
-  #page-profile{
+@media (min-width: 1100px) {
+  #page-profile {
     overflow-x: hidden;
   }
 
-  #page-profile .duple-field{
+  #page-profile .duple-field {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -166,14 +203,12 @@
     margin: 1.4rem 0;
   }
 
-
-  .lendif .input-block:first-child{
+  .lendif .input-block:first-child {
     width: 70%;
     margin-right: 1.4rem;
   }
 
-  #page-profile main fieldset .input-block{
-  margin-top: 0rem;
-}
-
+  #page-profile main fieldset .input-block {
+    margin-top: 0rem;
+  }
 }
